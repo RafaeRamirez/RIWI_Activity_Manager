@@ -1,0 +1,13 @@
+using System;
+namespace Riwi.Api.Models;
+
+public class Access
+{
+    public int id_access { get; set; }
+    public int role_id { get; set; }
+    public string username { get; set; }
+    public string password { get; set; }
+    public bool is_active { get; set; }
+    public DateTime created_at { get; set; }
+    public DateTime updated_at { get; set; }
+}
