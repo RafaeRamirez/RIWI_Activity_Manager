@@ -16,6 +16,7 @@ namespace Riwi.Api.Controllers
             _auth = auth;
         }
 
+        /*
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginRequest request)
         {
@@ -26,5 +27,6 @@ namespace Riwi.Api.Controllers
 
             return Ok(result);
         }
+        */
     }
 }

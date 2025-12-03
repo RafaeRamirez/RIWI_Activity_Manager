@@ -1,5 +1,4 @@
-using Ecommerce.Api.Data;
-using Ecommerce.Api.Dtos;
+using Riwi.Api.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -7,7 +6,6 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using BCrypt.Net;
 using System.Threading.Tasks;
 
 namespace Riwi.Api.Services
@@ -23,6 +21,7 @@ namespace Riwi.Api.Services
             _config = config;
         }
 
+        /*
         public async Task<LoginResponse> Login(LoginRequest request)
         {
             var user = await _context.Access
@@ -66,5 +65,7 @@ namespace Riwi.Api.Services
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
+        */
+        // TODO: Reimplement Login and GenerateJwtToken using the new Person model and correct logic.
     }
 }
