@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d37cfa2a-48cc-4650-9244-6a1b9904c027" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Riwi.Api/Controller/AuthController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Riwi.Api/Data/AplicationDbContext.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Riwi.Api/Models/Access.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Riwi.Api/Services/AuthService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Riwi.Api/Models/CoderProfile.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Riwi.Api/Models/Cohort.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Riwi.Api/Models/Location.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Riwi.Api/Models/People.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Riwi.Api/Models/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Riwi.Api/Models/Access.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Riwi.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Riwi.Api/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +37,11 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Riwi.Api/Controller/AuthController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Riwi.Api/Data/AplicationDbContext.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Riwi.Api/Models/Access.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Riwi.Api/Models/CoderProfile.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Riwi.Api/Models/Cohort.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Riwi.Api/Models/Location.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Riwi.Api/Models/People.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Riwi.Api/Models/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Riwi.Api/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Riwi.Api/Services/AuthService.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -75,8 +81,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1764717496120</updated>
-      <workItem from="1764717498816" duration="1087000" />
+      <workItem from="1764717498816" duration="2949000" />
     </task>
+    <task id="LOCAL-00001" summary="The Access model was implemented">
+      <option name="closed" value="true" />
+      <created>1764718780515</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1764718780515</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -97,6 +112,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="feat: Initialize new Riwi.Api .NET project and solution with IDE configuration." />
+    <MESSAGE value="The Access model was implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="The Access model was implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

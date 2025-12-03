@@ -1,5 +1,5 @@
-using Ecommerce.Api.Data;
-using Ecommerce.Api.Services;
+using Riwi.Api.Data;
+using Riwi.Api.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
