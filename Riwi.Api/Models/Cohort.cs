@@ -16,5 +16,6 @@ public class Cohort
     public DateTime? EndDate { get; set; }
 
     // Navigation property
-    public Program? Program { get; set; }
+    public Route? Route { get; set; }
+
 }

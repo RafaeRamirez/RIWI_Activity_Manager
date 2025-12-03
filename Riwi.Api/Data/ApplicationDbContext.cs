@@ -11,10 +11,28 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<Person> Persons { get; set; }
-    public DbSet<Riwi.Api.Models.Program> Programs { get; set; }
+    public DbSet<Route> Routes { get; set; }
     public DbSet<Cohort> Cohorts { get; set; }
     public DbSet<CoderProfile> CoderProfiles { get; set; }
     public DbSet<Location> Locations { get; set; }
+    public DbSet<Speaker> Speakers { get; set; }
+    public DbSet<EventSpeaker> EventSpeakers { get; set; }
+    public DbSet<Event> Events { get; set; }
+    public DbSet<Registration> Registrations { get; set; }
+    public DbSet<Attendance> Attendances { get; set; }
+    public DbSet<EventTag> EventTags { get; set; }
+    public DbSet<Tag> Tags { get; set; }
+    public DbSet<EventSession> EventSessions { get; set; }
+    public DbSet<SurveyTemplate> SurveyTemplates { get; set; }
+    public DbSet<SurveyQuestion> SurveyQuestions { get; set; }
+    public DbSet<SurveyAnswer> SurveyAnswers { get; set; }
+    public DbSet<SurveyResponse> SurveyResponses { get; set; }
+    public DbSet<EventSurvey> EventSurveys { get; set; }
+    public DbSet<EventRequirement> EventRequirements { get; set; }
+    public DbSet<CheckinToken> CheckinTokens { get; set; }
+    public DbSet<AuditLog> AuditLogs { get; set; }
+    public DbSet<Organization> Organizations { get; set; }
+    public DbSet<NotificationLog> NotificationLogs { get; set; }    
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -23,5 +41,5 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<Person>()
             .HasIndex(p => p.Email)
             .IsUnique();
-    }
+        }
 }

@@ -16,4 +16,5 @@ public class CoderProfile
     // Navigation properties
     public Person? Person { get; set; }
     public Cohort? Cohort { get; set; }
+    
 }

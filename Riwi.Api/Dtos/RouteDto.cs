@@ -2,18 +2,18 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Riwi.Api.Dtos
 {
-    public class CreateProgrammDto
+    public class CreateRouteDto
     {
         [Required]
         public string Name { get; set; } = string.Empty;
     }
 
-    public class UpdateProgrammDto
+    public class UpdateRouteDto
     {
         public string? Name { get; set; }
     }
 
-    public class ProgrammDto
+    public class RouteDto
     {
         public long ProgramId { get; set; }
 

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Riwi.Api.Models
 {
-    public class Program
+    public class Route
     {
         [Key]
         public long ProgramId { get; set; }

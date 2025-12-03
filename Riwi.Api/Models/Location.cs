@@ -14,4 +14,6 @@ public class Location
     public string? Room { get; set; }
 
     public string? Url { get; set; }
+
+    public ICollection<Event> Events { get; set; } = new List<Event>();
 }
