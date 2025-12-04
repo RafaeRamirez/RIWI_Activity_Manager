@@ -11,7 +11,7 @@ public class ApplicationDbContext : DbContext
     }
 
     public DbSet<Person> Persons { get; set; }
-    public DbSet<Route> Routes { get; set; }
+    public DbSet<Riwi.Api.Models.Route> Routes { get; set; }
     public DbSet<Cohort> Cohorts { get; set; }
     public DbSet<CoderProfile> CoderProfiles { get; set; }
     public DbSet<Location> Locations { get; set; }
