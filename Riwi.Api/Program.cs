@@ -1,5 +1,7 @@
 using Riwi.Api.Data;
 using Riwi.Api.Services;
+using Riwi.Api.Interfaces;
+using Riwi.Api.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -7,9 +9,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ----------------------------------------------------
-//                 CONFIGURACIÓN DE SERVICIOS
-// ----------------------------------------------------
+
 
 // Controllers (reemplaza el endpoint minimal /weatherforecast)
 builder.Services.AddControllers();
@@ -27,7 +27,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // ----------------------
 // Servicios propios
 // ----------------------
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddAutoMapper(typeof(Program));
 
 // ----------------------
 // JWT Authentication
@@ -48,9 +50,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         };
     });
 
-// ----------------------------------------------------
-//                 CONFIGURACIÓN DE LA APP
-// ----------------------------------------------------
 var app = builder.Build();
 
 // Swagger siempre visible (opcional: solo en desarrollo)

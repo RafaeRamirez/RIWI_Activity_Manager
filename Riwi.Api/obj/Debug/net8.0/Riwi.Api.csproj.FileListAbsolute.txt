@@ -228,3 +228,10 @@
 /home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/obj/Debug/net8.0/Riwi.Api.csproj.CopyComplete
 /home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/obj/Debug/net8.0/Riwi.Api.genruntimeconfig.cache
 /home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/obj/Debug/net8.0/ref/Riwi.Api.dll
+/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/AutoMapper.dll
+/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll
+/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll
+/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
+/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
+/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll

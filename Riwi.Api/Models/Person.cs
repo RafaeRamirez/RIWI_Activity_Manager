@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Riwi.Api.Enums;
 
 namespace Riwi.Api.Models
 {
@@ -26,7 +27,7 @@ namespace Riwi.Api.Models
 
         [Required]
         [Column("role")]
-        public string Role { get; set; } // coder | admin
+        public UserRole Role { get; set; } // coder | admin
 
         [Column("created_at")]
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
@@ -37,5 +38,6 @@ namespace Riwi.Api.Models
         public ICollection<SurveyResponse> SurveyResponses { get; set; } = new List<SurveyResponse>();
         public ICollection<AuditLog> AuditLogs { get; set; } = new List<AuditLog>();
         public Speaker? SpeakerProfile { get; set; }
+        public CoderProfile? CoderProfile { get; set; }
     }
 }

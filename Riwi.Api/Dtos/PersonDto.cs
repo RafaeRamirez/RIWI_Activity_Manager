@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using Riwi.Api.Enums;
 
 namespace Riwi.Api.Dtos
 {
@@ -16,7 +17,7 @@ namespace Riwi.Api.Dtos
         public string? Phone { get; set; }
 
         [Required]
-        public string Role { get; set; } = string.Empty;
+        public UserRole Role { get; set; }
     }
 
     public class UpdatePersonDto
@@ -30,7 +31,7 @@ namespace Riwi.Api.Dtos
 
         public string? Phone { get; set; }
 
-        public string? Role { get; set; }
+        public UserRole? Role { get; set; }
     }
 
     public class PersonDto
@@ -45,8 +46,10 @@ namespace Riwi.Api.Dtos
 
         public string? Phone { get; set; }
 
-        public string Role { get; set; } = string.Empty;
+        public UserRole Role { get; set; }
 
         public DateTime CreatedAt { get; set; }
+        
+        public CoderProfileDto? CoderProfile { get; set; }
     }
 }

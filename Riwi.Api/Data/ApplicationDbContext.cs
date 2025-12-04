@@ -41,5 +41,14 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<Person>()
             .HasIndex(p => p.Email)
             .IsUnique();
+
+        modelBuilder.Entity<Person>()
+            .Property(p => p.Role)
+            .HasConversion<string>();
+
+        modelBuilder.Entity<Person>()
+            .HasOne(p => p.CoderProfile)
+            .WithOne(c => c.Person)
+            .HasForeignKey<CoderProfile>(c => c.PersonId);
         }
 }
