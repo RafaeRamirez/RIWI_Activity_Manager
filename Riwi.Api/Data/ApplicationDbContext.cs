@@ -50,5 +50,23 @@ public class ApplicationDbContext : DbContext
             .HasOne(p => p.CoderProfile)
             .WithOne(c => c.Person)
             .HasForeignKey<CoderProfile>(c => c.PersonId);
+
+        modelBuilder.Entity<EventTag>()
+            .HasKey(et => new { et.EventId, et.TagId });
+
+        modelBuilder.Entity<EventSpeaker>()
+            .HasKey(es => new { es.EventId, es.SpeakerId });
+
+        modelBuilder.Entity<SurveyAnswer>()
+            .HasKey(sa => new { sa.ResponseId, sa.QuestionId });
+
+        modelBuilder.Entity<EventSurvey>()
+            .HasKey(es => new { es.EventId, es.TemplateId });
+
+        modelBuilder.Entity<Attendance>()
+            .HasOne(a => a.Session)
+            .WithMany(s => s.Attendances)
+            .HasForeignKey(a => a.SessionId)
+            .IsRequired(false);
         }
 }

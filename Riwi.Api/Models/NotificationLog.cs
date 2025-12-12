@@ -1,9 +1,11 @@
 using Riwi.Api.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Riwi.Api.Models;
 
 public class NotificationLog
 {
+    [Key]
     public long NotificationId { get; set; }                     // BIGSERIAL PK
 
     public long? EventId { get; set; }                           // Opcional (no NOT NULL)

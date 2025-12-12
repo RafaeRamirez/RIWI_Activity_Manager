@@ -4,6 +4,7 @@ namespace Riwi.Api.Models;
 
 public class EventSession
 {
+    [Key]
     public long SessionId { get; set; }              // BIGSERIAL → long
 
     public long EventId { get; set; }                // FK obligatorio

@@ -5,6 +5,7 @@ namespace Riwi.Api.Models;
 
 public class EventRequirement
 {
+    [Key]
     public long RequirementId { get; set; }     // BIGSERIAL → long
 
     public long EventId { get; set; }           // FK obligatorio

@@ -235,3 +235,5 @@
 /home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/Microsoft.Extensions.Options.dll
 /home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
 /home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
+/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/AutoMapper.dll
+/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/bin/Debug/net8.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll

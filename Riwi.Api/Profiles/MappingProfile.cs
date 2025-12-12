@@ -93,6 +93,11 @@ namespace Riwi.Api.Profiles
             CreateMap<UpdateCoderProfileDto, CoderProfile>()
                 .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
             CreateMap<CoderProfile, CoderProfileDto>();
+
+            CreateMap<CreateLocationDto, Location>();
+            CreateMap<UpdateLocationDto, Location>()
+                .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+            CreateMap<Location, LocationDto>();
         }
     }
 }

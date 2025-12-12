@@ -5,6 +5,7 @@ namespace Riwi.Api.Models;
 
 public class Organization
 {
+    [Key]
     public long OrgId { get; set; }            // BIGSERIAL → long
     public string Name { get; set; } = null!;  // NOT NULL
 

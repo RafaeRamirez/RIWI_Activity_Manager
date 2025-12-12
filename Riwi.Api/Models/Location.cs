@@ -4,6 +4,7 @@ namespace Riwi.Api.Models;
 
 public class Location
 {
+    [Key]
     public long LocationId { get; set; }
 
     [Required]

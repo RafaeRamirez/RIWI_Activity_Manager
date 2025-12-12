@@ -1,9 +1,11 @@
 using Riwi.Api.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Riwi.Api.Models;
 
 public class Registration
 {
+    [Key]
     public long RegistrationId { get; set; }
 
     public long EventId { get; set; }

@@ -1,10 +1,12 @@
 using Riwi.Api.Enums;
+using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 
 namespace Riwi.Api.Models;
 
 public class AuditLog
 {
+    [Key]
     public long AuditId { get; set; }                 // BIGSERIAL PK
 
     public long? ActorId { get; set; }                // FK → people (no NOT NULL)

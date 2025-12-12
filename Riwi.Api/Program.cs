@@ -28,6 +28,17 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 // Servicios propios
 // ----------------------
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IEventRepository, EventRepository>();
+builder.Services.AddScoped<IPersonRepository, PersonRepository>();
+builder.Services.AddScoped<IOrganizationRepository, OrganizationRepository>();
+builder.Services.AddScoped<ILocationRepository, LocationRepository>();
+builder.Services.AddScoped<IAttendanceRepository, AttendanceRepository>();
+builder.Services.AddScoped<IRegistrationRepository, RegistrationRepository>();
+builder.Services.AddScoped<ISpeakerRepository, SpeakerRepository>();
+builder.Services.AddScoped<ISurveyTemplateRepository, SurveyTemplateRepository>();
+builder.Services.AddScoped<ISurveyQuestionRepository, SurveyQuestionRepository>();
+builder.Services.AddScoped<ISurveyResponseRepository, SurveyResponseRepository>();
+builder.Services.AddScoped<ISurveyAnswerRepository, SurveyAnswerRepository>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddAutoMapper(typeof(Program));
 

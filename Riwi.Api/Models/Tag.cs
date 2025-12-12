@@ -4,6 +4,7 @@ namespace Riwi.Api.Models;
 
 public class Tag
 {
+    [Key]
     public long TagId { get; set; }         // BIGSERIAL → long
     public string Name { get; set; } = null!;
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj": {}
+    "/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj": {}
   },
   "projects": {
-    "/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj": {
+    "/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj",
+        "projectUniqueName": "/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj",
         "projectName": "Riwi.Api",
-        "projectPath": "/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj",
+        "projectPath": "/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj",
         "packagesPath": "/home/Coder/.nuget/packages/",
-        "outputPath": "/home/Coder/Vídeos/RIWI_Activity_Manager/Riwi.Api/obj/",
+        "outputPath": "/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/Coder/.nuget/NuGet/NuGet.Config"
@@ -40,7 +40,7 @@
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
-              "version": "[16.0.0, )"
+              "version": "[12.0.1, )"
             },
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",

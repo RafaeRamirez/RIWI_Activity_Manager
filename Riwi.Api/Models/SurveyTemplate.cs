@@ -1,10 +1,12 @@
 using Riwi.Api.Enums;
+using System.ComponentModel.DataAnnotations;
 
 
 namespace Riwi.Api.Models;
 
 public class SurveyTemplate
 {
+    [Key]
     public long TemplateId { get; set; }          // BIGSERIAL → long
 
     public string Name { get; set; } = null!;     // NOT NULL

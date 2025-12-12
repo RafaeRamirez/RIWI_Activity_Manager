@@ -4,6 +4,7 @@ namespace Riwi.Api.Models;
 
 public class CheckinToken
 {
+    [Key]
     public long TokenId { get; set; }                     // BIGSERIAL
 
     public long EventId { get; set; }

@@ -4,6 +4,7 @@ namespace Riwi.Api.Models;
 
 public class Speaker
 {
+    [Key]
     public long SpeakerId { get; set; }          // BIGSERIAL → long
 
     public long? PersonId { get; set; }          // Relación opcional

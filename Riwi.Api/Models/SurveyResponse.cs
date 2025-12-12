@@ -1,9 +1,11 @@
 using Riwi.Api.Models;
+using System.ComponentModel.DataAnnotations;
 
 namespace Riwi.Api.Models;
 
 public class SurveyResponse
 {
+    [Key]
     public long ResponseId { get; set; }                        // BIGSERIAL
 
     public long EventId { get; set; }                           // FK → events

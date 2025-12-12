@@ -4,6 +4,7 @@ namespace Riwi.Api.Models;
 
 public class Cohort
 {
+    [Key]
     public long CohortId { get; set; }
 
     [Required]

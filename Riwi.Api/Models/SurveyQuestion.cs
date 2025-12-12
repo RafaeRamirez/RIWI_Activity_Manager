@@ -1,9 +1,11 @@
 using Riwi.Api.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Riwi.Api.Models;
 
 public class SurveyQuestion
 {
+    [Key]
     public long QuestionId { get; set; }                      // BIGSERIAL
 
     public long TemplateId { get; set; }                      // FK → survey_templates
