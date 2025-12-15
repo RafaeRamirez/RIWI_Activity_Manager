@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 using System.ComponentModel.DataAnnotations.Schema;
 using Riwi.Api.Enums;
 
@@ -24,6 +25,10 @@ namespace Riwi.Api.Models
 
         [Column("phone")]
         public string? Phone { get; set; }
+
+        [Column("password")]
+        [JsonIgnore]
+        public string Password { get; set; } = string.Empty;
 
         [Required]
         [Column("role")]

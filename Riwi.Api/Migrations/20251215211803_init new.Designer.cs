@@ -3,6 +3,7 @@ using System;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Riwi.Api.Data;
@@ -12,9 +13,11 @@ using Riwi.Api.Data;
 namespace Riwi.Api.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251215211803_init new")]
+    partial class initnew
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -458,11 +461,6 @@ namespace Riwi.Api.Migrations
                         .IsRequired()
                         .HasColumnType("text")
                         .HasColumnName("full_name");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("text")
-                        .HasColumnName("password");
 
                     b.Property<string>("Phone")
                         .HasColumnType("text")

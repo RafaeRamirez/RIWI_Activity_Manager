@@ -1,4 +1,5 @@
 using Riwi.Api.Data;
+using Riwi.Api.Dtos;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -21,51 +22,52 @@ namespace Riwi.Api.Services
             _config = config;
         }
 
-        /*
-        public async Task<LoginResponse> Login(LoginRequest request)
+        /// <summary>
+        /// Simple email-based login for testing purposes
+        /// In production, this should validate a password
+        /// </summary>
+        public async Task<LoginResponse?> Login(LoginRequest request)
         {
-            var user = await _context.Access
-                .FirstOrDefaultAsync(x => x.username == request.Username && x.is_active);
+            var person = await _context.Persons
+                .FirstOrDefaultAsync(x => x.Email == request.Email);
 
-            if (user == null)
+            if (person == null || !BCrypt.Net.BCrypt.Verify(request.Password, person.Password))
                 return null;
 
-            if (!BCrypt.Net.BCrypt.Verify(request.Password, user.password))
-                return null;
-
-            var token = GenerateJwtToken(user);
+            var token = GenerateJwtToken(person);
 
             return new LoginResponse
             {
                 Token = token,
-                Username = user.username,
-                RoleId = user.role_id
+                Email = person.Email,
+                PersonId = person.PersonId,
+                FullName = person.FullName,
+                Role = person.Role.ToString()
             };
         }
 
-        private string GenerateJwtToken(Ecommerce.Api.Models.Access user)
+        private string GenerateJwtToken(Models.Person person)
         {
             var key = Encoding.UTF8.GetBytes(_config["Jwt:Key"]);
             var creds = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256);
 
             var claims = new[]
             {
-                new Claim("id", user.id_access.ToString()),
-                new Claim("role", user.role_id.ToString()),
-                new Claim(ClaimTypes.Name, user.username)
+                new Claim("id", person.PersonId.ToString()),
+                new Claim("role", person.Role.ToString()),
+                new Claim(ClaimTypes.Name, person.FullName),
+                new Claim(ClaimTypes.Email, person.Email)
             };
 
             var token = new JwtSecurityToken(
                 issuer: _config["Jwt:Issuer"],
                 audience: _config["Jwt:Audience"],
                 claims: claims,
-                expires: DateTime.UtcNow.AddHours(double.Parse(_config["Jwt:ExpireHours"])),
+                expires: DateTime.UtcNow.AddHours(double.Parse(_config["Jwt:ExpireHours"] ?? "24")),
                 signingCredentials: creds
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
-        */
-        // TODO: Reimplement Login and GenerateJwtToken using the new Person model and correct logic.
     }
 }

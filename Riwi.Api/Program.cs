@@ -19,6 +19,25 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 // ----------------------
+// CORS Configuration
+// ----------------------
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", policy =>
+    {
+        policy.WithOrigins(
+                "http://localhost:5173",  // Vite default
+                "http://localhost:3000",  // Create React App default
+                "http://localhost:5174",  // Vite alternate
+                "http://localhost:4173"   // Vite preview
+            )
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+
+// ----------------------
 // PostgreSQL + EF Core
 // ----------------------
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
@@ -69,12 +88,24 @@ app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 
+// CORS - debe ir antes de Authentication y Authorization
+app.UseCors("AllowReactApp");
+
 // JWT
 app.UseAuthentication();
 app.UseAuthorization();
 
 // Controllers API
 app.MapControllers();
+
+// Seed Data
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    var context = services.GetRequiredService<ApplicationDbContext>();
+    context.Database.Migrate();
+    DataSeeder.Seed(context);
+}
 
 app.Run();
 
