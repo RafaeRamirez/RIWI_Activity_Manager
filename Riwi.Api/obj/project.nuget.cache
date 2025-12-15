@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rx2o0XYt8yd+Nx+UtMihqTToJmMXS38q7tgcQMO3fpwT8ysjfCIRx68kQt6x2pPKeje1cDEJBLA7rV3iB/OgRg==",
+  "dgSpecHash": "NJcyGa9IvCI=",
   "success": true,
-  "projectFilePath": "/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj",
+  "projectFilePath": "/home/Coder/Escritorio/dad/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj",
   "expectedPackageFiles": [
     "/home/Coder/.nuget/packages/automapper/12.0.1/automapper.12.0.1.nupkg.sha512",
     "/home/Coder/.nuget/packages/automapper.extensions.microsoft.dependencyinjection/12.0.1/automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

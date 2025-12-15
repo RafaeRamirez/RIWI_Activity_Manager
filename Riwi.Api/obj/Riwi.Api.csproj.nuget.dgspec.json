@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj": {}
+    "/home/Coder/Escritorio/dad/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj": {}
   },
   "projects": {
-    "/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj": {
+    "/home/Coder/Escritorio/dad/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj",
+        "projectUniqueName": "/home/Coder/Escritorio/dad/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj",
         "projectName": "Riwi.Api",
-        "projectPath": "/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj",
+        "projectPath": "/home/Coder/Escritorio/dad/RIWI_Activity_Manager/Riwi.Api/Riwi.Api.csproj",
         "packagesPath": "/home/Coder/.nuget/packages/",
-        "outputPath": "/home/Coder/Documentos/RIWI_Activity_Manager/Riwi.Api/obj/",
+        "outputPath": "/home/Coder/Escritorio/dad/RIWI_Activity_Manager/Riwi.Api/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/home/Coder/.nuget/NuGet/NuGet.Config"
