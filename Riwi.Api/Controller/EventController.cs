@@ -129,7 +129,7 @@ namespace Riwi.Api.Controllers
                 {
                     StatusCode = 500,
                     Message = "An error occurred while creating the event",
-                    Details = ex.Message
+                    Details = ex.InnerException != null ? $"{ex.Message} | Inner: {ex.InnerException.Message}" : ex.Message
                 });
             }
         }
