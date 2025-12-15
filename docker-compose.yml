@@ -1,0 +1,36 @@
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: riwi_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build:
+      context: ./Riwi.Api
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - ConnectionStrings__DefaultConnection=Host=db;Port=5432;Database=riwi_db;Username=postgres;Password=password
+      - ASPNETCORE_HTTP_PORTS=8080
+      - Jwt__Key=ThisIsASecretKeyForJwtTokenGeneration123456
+      - Jwt__Issuer=RiwiApi
+      - Jwt__Audience=RiwiApiUser
+      - Jwt__ExpireHours=24
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  postgres_data:
