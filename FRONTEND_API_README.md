@@ -1,41 +1,41 @@
-# Documentación de la API para Frontend
+# Frontend API Documentation
 
-Esta guía proporciona información detallada sobre cómo consumir la API desde la aplicación frontend.
+This guide provides detailed information on how to consume the API from the frontend application.
 
-## 🚀 Comenzando
+## 🚀 Getting Started
 
-### URL Base
-Todas las peticiones a la API deben tener el prefijo:
-`http://localhost:8080/api`
+### Base URL
+All API requests should be prefixed with:
+`http://localhost:1924/api`
 
-### Autenticación
-La mayoría de los endpoints requieren un token JWT válido. Debes incluir el token en el encabezado `Authorization` de tus peticiones.
+### Authentication
+Most endpoints require a valid JWT token. You must include the token in the `Authorization` header of your requests.
 
-**Formato del Encabezado:**
+**Header Format:**
 ```http
-Authorization: Bearer <tu_token>
+Authorization: Bearer <your_token>
 ```
 
 ---
 
-## 🔑 Endpoints de Autenticación
+## 🔑 Authentication Endpoints
 
-### Iniciar Sesión (Login)
-Autentica a un usuario y obtiene un token JWT.
+### Login
+Authenticate a user and retrieve a JWT token.
 
 - **URL**: `/auth/login`
-- **Método**: `POST`
-- **Requiere Auth**: No
+- **Method**: `POST`
+- **Auth Required**: No
 
-#### Cuerpo de la Petición
+#### Request Body
 ```json
 {
   "email": "admin@riwi.io",
-  "password": "tu_contraseña"
+  "password": "your_password"
 }
 ```
 
-#### Respuesta Exitosa (200 OK)
+#### Success Response (200 OK)
 ```json
 {
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
@@ -46,31 +46,31 @@ Autentica a un usuario y obtiene un token JWT.
 }
 ```
 
-#### Respuesta de Error (401 Unauthorized)
+#### Error Response (401 Unauthorized)
 ```json
 {
-  "message": "Email no encontrado"
+  "message": "Email not found"
 }
 ```
 
 ---
 
-## 📅 Endpoints de Eventos
+## 📅 Events Endpoints
 
-### Listar Todos los Eventos
-Obtiene una lista de todos los eventos disponibles.
+### List All Events
+Get a list of all available events.
 
 - **URL**: `/event`
-- **Método**: `GET`
-- **Requiere Auth**: Sí
+- **Method**: `GET`
+- **Auth Required**: Yes
 
-#### Respuesta Exitosa (200 OK)
+#### Success Response (200 OK)
 ```json
 [
   {
     "eventId": 1,
-    "title": "Taller de Intro a C#",
-    "description": "Un taller para principiantes.",
+    "title": "Intro to C# Workshop",
+    "description": "A beginner friendly workshop.",
     "eventType": "Workshop",
     "capacity": 30,
     "startAt": "2025-12-22T22:00:00+00:00",
@@ -80,29 +80,29 @@ Obtiene una lista de todos los eventos disponibles.
 ]
 ```
 
-### Crear Evento
-Crea un nuevo evento. Solo los usuarios con rol `Admin` pueden realizar esta acción.
+### Create Event
+Create a new event. Only users with `Admin` role can perform this action.
 
 - **URL**: `/event`
-- **Método**: `POST`
-- **Requiere Auth**: Sí (Admin)
+- **Method**: `POST`
+- **Auth Required**: Yes (Admin)
 
-#### Cuerpo de la Petición
-| Campo | Tipo | Requerido | Descripción |
-|-------|------|-----------|-------------|
-| title | string | Sí | Título del evento |
-| description | string | No | Descripción del evento |
-| eventType | string | Sí | Ej: "Workshop", "Meetup" |
-| capacity | int | Sí | Capacidad máxima |
-| startAt | string | Sí | Fecha ISO 8601 |
-| endAt | string | Sí | Fecha ISO 8601 |
-| locationId | long | No | ID de la ubicación |
+#### Request Body
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| title | string | Yes | Event title |
+| description | string | No | Event description |
+| eventType | string | Yes | e.g., "Workshop", "Meetup" |
+| capacity | int | Yes | Max attendees |
+| startAt | string | Yes | ISO 8601 Date |
+| endAt | string | Yes | ISO 8601 Date |
+| locationId | long | No | ID of the location |
 
-**Ejemplo:**
+**Example:**
 ```json
 {
-  "title": "Masterclass de React",
-  "description": "Patrones avanzados en React.",
+  "title": "React Masterclass",
+  "description": "Advanced patterns in React.",
   "eventType": "Workshop",
   "capacity": 50,
   "startAt": "2025-12-25T10:00:00Z",
@@ -114,66 +114,66 @@ Crea un nuevo evento. Solo los usuarios con rol `Admin` pueden realizar esta acc
 
 ---
 
-## 👥 Endpoints de Personas (Usuarios)
+## 👥 People Endpoints
 
-### Listar Todas las Personas
-Obtiene una lista de usuarios registrados.
-
-- **URL**: `/person`
-- **Método**: `GET`
-- **Requiere Auth**: Sí
-
-### Crear Persona
-Registra un nuevo usuario manualmente.
+### List All People
+Get a list of registered users.
 
 - **URL**: `/person`
-- **Método**: `POST`
-- **Requiere Auth**: Sí
+- **Method**: `GET`
+- **Auth Required**: Yes
 
-#### Cuerpo de la Petición
+### Create Person
+Register a new user manually.
+
+- **URL**: `/person`
+- **Method**: `POST`
+- **Auth Required**: Yes
+
+#### Request Body
 ```json
 {
-  "email": "nuevousuario@riwi.io",
-  "fullName": "Nuevo Usuario",
-  "role": "Coder",  // Opciones: "Admin", "Coder"
+  "email": "newuser@riwi.io",
+  "fullName": "New User",
+  "role": "Coder",  // Options: "Admin", "Coder"
   "phone": "1234567890"
 }
 ```
 
 ---
 
-## 📍 Otros Endpoints
+## 📍 Other Endpoints
 
-### Ubicaciones (Locations)
-- `GET /location`: Listar ubicaciones
-- `POST /location`: Agregar ubicación
+### Locations
+- `GET /location`: List locations
+- `POST /location`: Add location
   ```json
   {
-    "name": "Salón Principal",
-    "address": "Calle Tech 123",
+    "name": "Main Hall",
+    "address": "123 Tech Street",
     "capacity": 100
   }
   ```
 
-### Ponentes (Speakers)
-- `GET /speaker`: Listar ponentes
-- `POST /speaker`: Agregar ponente
+### Speakers
+- `GET /speaker`: List speakers
+- `POST /speaker`: Add speaker
 
-### Organizaciones
-- `GET /organization`: Listar organizaciones
+### Organizations
+- `GET /organization`: List organizations
 
 ---
 
-## ⚠️ Manejo de Errores
+## ⚠️ Error Handling
 
-La API utiliza códigos de estado HTTP estándar para indicar éxito o fracaso.
+The API uses standard HTTP status codes to indicate success or failure.
 
-| Código | Significado | Descripción |
-|--------|-------------|-------------|
-| **200** | OK | Petición exitosa. |
-| **201** | Created | Recurso creado exitosamente. |
-| **400** | Bad Request | Datos de entrada inválidos (revisa tu JSON). |
-| **401** | Unauthorized | Token JWT faltante o inválido. |
-| **403** | Forbidden | No tienes permiso (ej: no-admin intentando crear evento). |
-| **404** | Not Found | El recurso solicitado (ID) no existe. |
-| **500** | Server Error | Algo salió mal en el servidor. |
+| Status Code | Meaning | Description |
+|-------------|---------|-------------|
+| **200** | OK | Request succeeded. |
+| **201** | Created | Resource created successfully. |
+| **400** | Bad Request | Invalid input data (check your JSON). |
+| **401** | Unauthorized | Invalid or missing JWT token. |
+| **403** | Forbidden | You don't have permission (e.g., non-admin trying to create event). |
+| **404** | Not Found | The requested resource (ID) does not exist. |
+| **500** | Server Error | Something went wrong on the server. |

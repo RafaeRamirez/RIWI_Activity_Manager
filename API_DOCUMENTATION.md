@@ -34,8 +34,8 @@ This API is built with .NET 8 and uses PostgreSQL as the database. It is fully d
         - Password: `123456`
 
 ### Swagger UI
-The API documentation is available via Swagger UI at:
-- `http://localhost:8080/swagger/index.html`
+- **API Base URL**: `http://localhost:1924`
+- **Swagger UI**: `http://localhost:1924/swagger/index.html`
 
 ## Database Seeding
 The application automatically seeds the database with default users and events on startup if the tables are empty.
