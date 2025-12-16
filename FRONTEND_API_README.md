@@ -6,7 +6,7 @@ This guide provides detailed information on how to consume the API from the fron
 
 ### Base URL
 All API requests should be prefixed with:
-`http://localhost:1924/api`
+`http://localhost:1925/api`
 
 ### Authentication
 Most endpoints require a valid JWT token. You must include the token in the `Authorization` header of your requests.
