@@ -1,0 +1,9 @@
+**/.git
+**/.vs
+**/bin
+**/obj
+**/.idea
+README.md
+API_DOCUMENTATION.md
+FRONTEND_API_README.md
+LICENSE

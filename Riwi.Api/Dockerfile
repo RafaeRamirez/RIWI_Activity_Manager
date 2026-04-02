@@ -1,0 +1,26 @@
+# Base stage
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
+USER app
+WORKDIR /app
+EXPOSE 8080
+
+# Build stage
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+ARG BUILD_CONFIGURATION=Release
+WORKDIR /src
+COPY ["Riwi.Api/Riwi.Api.csproj", "Riwi.Api/"]
+RUN dotnet restore "Riwi.Api/Riwi.Api.csproj"
+COPY . .
+WORKDIR "/src/Riwi.Api"
+RUN dotnet build "Riwi.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
+
+# Publish stage
+FROM build AS publish
+ARG BUILD_CONFIGURATION=Release
+RUN dotnet publish "Riwi.Api.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+
+# Final stage
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Riwi.Api.dll"]

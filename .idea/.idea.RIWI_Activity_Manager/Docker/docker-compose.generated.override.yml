@@ -1,0 +1,21 @@
+# This is a generated file. Not intended for manual editing.
+services:
+  api:
+    build:
+      context: "/home/Coder/Escritorio/dad/RIWI_Activity_Manager"
+      dockerfile: "Riwi.Api/Dockerfile"
+      target: "base"
+    command: []
+    entrypoint:
+    - "dotnet"
+    - "/app/bin/Debug/net8.0/Riwi.Api.dll"
+    environment:
+      ASPNETCORE_ENVIRONMENT: "Development"
+      DOTNET_USE_POLLING_FILE_WATCHER: "true"
+    image: "riwi.api:dev"
+    ports: []
+    volumes:
+    - "/home/Coder/Escritorio/dad/RIWI_Activity_Manager/Riwi.Api:/app:rw"
+    - "/home/Coder/Escritorio/dad/RIWI_Activity_Manager:/src:rw"
+    - "/home/Coder/.nuget/packages:/home/app/.nuget/packages"
+    working_dir: "/app"
